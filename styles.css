@@ -1,0 +1,537 @@
+@import url('https://fonts.googleapis.com/css2?family=Cabin:ital,wght@0,400..700;1,400..700&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    font-family: "Cabin", sans-serif;
+}
+
+header {
+    background-color: #4CAF50;
+    color: white;
+    padding: 5px; /* Diminuído o tamanho do fundo verde */
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.logo-title {
+    display: flex;
+    align-items: center;
+}
+
+.logo {
+    width: 50px;
+    height: auto;
+    margin-right: 10px;
+}
+
+.typing-effect {
+    font-size: 2em; /* Diminuir o tamanho da letra */
+    margin-bottom: 10px;
+    white-space: nowrap;
+    overflow: hidden;
+    border-right: 0.1em solid #FFD700; /* Diminuir o tamanho da barra do cursor */
+    animation: typing 4s steps(10, end) infinite, blink-caret 0.75s step-end infinite;
+}
+
+@keyframes typing {
+    from {
+        width: 0; /* Inicia com largura 0 */
+    }
+    to {
+        width: 100%; /* Aumenta para a largura total do texto */
+    }
+}
+
+@keyframes blink-caret {
+    from, to {
+        border-color: transparent; /* O cursor é invisível no início e no fim */
+    }
+    50% {
+        border-color: #FFD700; /* O cursor é visível na metade do caminho */
+    }
+}
+
+.nav-menu {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    margin-left: 0;
+    margin-right: 0;
+}
+
+.nav-menu li {
+    position: relative;
+}
+
+.nav-menu a {
+    color: white;
+    text-decoration: none;
+    font-weight: 600;
+    padding: 10px 10px;
+    transition: color 0.3s, transform 0.3s; /* Transição suave para cor e aumento */
+}
+
+.nav-menu a:hover {
+    color: #FFD700; /* Muda a cor do texto ao passar o mouse */
+    transform: scale(1.1); /* Aumenta o tamanho do link ao passar o mouse */
+}
+
+.dropdown-menu {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background-color: white;
+    border-radius: 5px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    padding: 10px 0;
+    z-index: 100;
+}
+
+.dropdown-menu li {
+    padding: 10px 20px;
+}
+
+.dropdown-menu a {
+    color: #333;
+    display: block;
+    transition: background-color 0.3s, transform 0.3s; /* Adicionado transição para submenu */
+}
+
+.dropdown-menu a:hover {
+    background-color: #f0f0f0; /* Muda o fundo ao passar o mouse no submenu */
+    transform: scale(1.1); /* Efeito de aumento no submenu */
+}
+
+.dropdown:hover .dropdown-menu {
+    display: block; /* Exibe o submenu quando o mouse está sobre o item pai */
+}
+
+.agenda-button {
+    background-color: #FFD700;
+    color: #333;
+    text-decoration: none;
+    padding: 10px 15px;
+    border-radius: 5px;
+    font-weight: 600;
+    transition: background-color 0.3s;
+    outline: none;
+}
+
+.agenda-button:hover {
+    background-color: #ffc107;
+}
+
+.psicovitta-info {
+    display: flex; 
+    justify-content: center; 
+    align-items: center; 
+    padding: 40px; /* Aumenta o espaço interno */
+    margin: 0 auto; /* Centraliza a seção em relação ao pai */
+    background-color: rgba(255, 255, 255, 0); /* Fundo transparente */
+}
+
+.info-content {
+    flex: 1; /* Permite que o conteúdo ocupe o espaço disponível */
+    text-align: center; /* Centraliza o texto */
+    max-width: 600px; /* Limita a largura do conteúdo */
+    margin-right: 20px; /* Espaço entre o conteúdo e a imagem */
+}
+
+.psicovitta-info h2 {
+    color: #4CAF50; /* Cor do título */
+    margin-bottom: 15px;
+}
+
+.psicovitta-info p {
+    color: #333; /* Cor do texto */
+    margin-bottom: 20px;
+    line-height: 1.5; /* Aumento do espaçamento entre linhas */
+}
+
+.button-container {
+    display: flex;
+    gap: 15px; /* Espaçamento entre os botões */
+    justify-content: center; /* Centraliza os botões */
+}
+
+.agendar-button {
+    color: white; /* Cor do texto do botão */
+    text-decoration: none; /* Remove o sublinhado */
+    padding: 10px 15px; /* Espaçamento interno */
+    border-radius: 5px; /* Bordas arredondadas */
+    font-weight: 600; /* Negrito */
+    transition: background-color 0.3s; /* Transição suave */
+}
+
+.agendar-button.online {
+    background-color: #28a745; /* Verde para terapia online */
+}
+
+.agendar-button.presencial {
+    background-color: #007bff; /* Azul para terapia presencial */
+}
+
+.agendar-button.online:hover {
+    background-color: #218838; /* Verde mais escuro ao passar o mouse */
+}
+
+.agendar-button.presencial:hover {
+    background-color: #0069d9; /* Azul mais escuro ao passar o mouse */
+}
+
+.info-image {
+    width: 300px; /* Defina uma largura fixa para a imagem */
+    height: auto; /* Manter a proporção da imagem */
+    border-radius: 5px; /* Bordas arredondadas na imagem */
+    margin-left: 20px; /* Espaço entre a imagem e o texto */
+}
+
+.why-choose {
+    max-width: 800px;
+    margin: 50px auto;
+    padding: 20px;
+    line-height: 1.6;
+    background-color: transparent;
+}
+
+.content-wrapper {
+    display: flex;
+    gap: 30px; /* Espaço entre a imagem e o texto */
+    align-items: flex-start;
+}
+
+.content-wrapper img {
+    width: 40%; /* Reduz tamanho da imagem */
+    height: auto;
+    border-radius: 8px;
+    object-fit: cover;
+}
+
+.text-content {
+    width: 65%; /* Ajusta largura do texto */
+    text-align: left;
+    display: flex;
+    flex-direction: column;
+    gap: 15px; /* Espaço entre parágrafos */
+    font-size: 0.9rem; /* Reduz tamanho do texto */
+}
+
+.text-content h2 {
+    text-align: left;
+    margin-bottom: 10px;
+    font-size: 1.5rem; /* Tamanho menor do título */
+}
+
+/* Responsividade para telas menores */
+@media (max-width: 768px) {
+    .content-wrapper {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .content-wrapper img {
+        width: 80%;
+    }
+
+    .text-content {
+        width: 100%;
+        text-align: center;
+    }
+
+    .text-content h2 {
+        align-self: center;
+    }
+}
+
+.help-section {
+    /* background-color: #f9f9f9; /* Fundo claro para a seção de ajuda */
+    padding: 20px;
+    margin: 20px auto; /* Centraliza a seção horizontalmente */
+    border-radius: 8px;
+/*    max-width: 1200px; /* Define uma largura máxima para a seção */
+}
+
+.help-content {
+    display: flex; /* Utiliza flexbox para alinhar conteúdo horizontalmente */
+    align-items: flex-start; /* Alinha itens ao topo */
+    justify-content: center; /* Centraliza horizontalmente o conteúdo */
+}
+
+.help-text {
+    width: 70%; /* Define a largura do texto como 70% */
+    padding-left: 30px; /* Adiciona espaçamento à esquerda do texto */
+}
+
+.help-section h2 {
+    margin-bottom: 15px;
+    text-align: center; /* Centraliza o título */
+}
+
+.help-columns {
+    display: flex; /* Utiliza flexbox para criar duas colunas */
+    justify-content: space-between; /* Espaço entre as colunas */
+    margin-top: 10px; /* Adiciona espaço entre o parágrafo e as colunas */
+}
+
+.help-list {
+    list-style-type: none; /* Remove o estilo padrão da lista */
+    width: 45%; /* Define a largura das listas para 45% para se encaixarem lado a lado */
+    padding: 0; /* Remove o preenchimento da lista */
+    margin: 0 10px; /* Adiciona margem lateral para espaçamento entre as listas */
+}
+
+.help-list li {
+    margin: 10px 0; /* Espaço entre os itens da lista */
+    display: flex;
+    align-items: center; /* Centraliza verticalmente o ícone e o texto */
+}
+
+.check-icon {
+    margin-right: 10px; /* Espaço entre o ícone e o texto */
+    width: 20px; /* Ajuste o tamanho do ícone */
+    height: 20px; /* Ajuste o tamanho do ícone */
+}
+
+.help-image {
+    max-width: 300px; /* Ajusta a largura máxima da imagem */
+    height: auto; /* Mantém a proporção da imagem */
+    margin-left: 20px; /* Adiciona espaçamento à esquerda da imagem */
+}
+
+.approach-section {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 20px 0;
+    width: 100%;
+}
+
+.approach-content {
+    display: flex;
+    height: 90%;
+    width: 50%; /* Ajuste da largura do conteúdo */
+    align-items: stretch;
+    gap: 20px;
+    justify-content: center; /* Centraliza os elementos horizontalmente */
+}
+
+.approach-image-wrapper {
+    position: relative;
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    max-width: 100%; /* Aumenta o espaço da imagem */
+}
+
+.approach-image {
+    width: 80%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 12px;
+    position: relative; /* Torna a imagem relativa ao grid overlay */
+}
+
+.overlay-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* Mantém 3 colunas */
+    gap: 10px;
+    position: absolute;
+    top: 1%; /* Ajusta o posicionamento do conteúdo dentro da imagem */
+    left: 10%;
+    width: 80%; /* Garante que a grade ocupe a imagem de fundo */
+    padding: 20px;
+    justify-items: center;
+}
+
+.overlay-grid h2 {
+    grid-column: span 3; /* Garante que o título ocupa toda a largura */
+    text-align: center;
+    margin-bottom: 10px;
+    color: white;
+    font-size: 1.6rem;
+}
+
+.grid-item {
+    text-align: center;
+    color: white;
+}
+
+.grid-item img {
+    width: 40px; /* Ajusta o tamanho dos ícones */
+    height: auto;
+    margin-bottom: 8px;
+}
+
+.grid-item p {
+    margin: 0;
+    font-size: 12px;
+}
+
+.approach-box {
+    flex: 1;
+    max-width: 40%; /* Ajusta o tamanho da caixa de texto */
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    gap: 10px;
+    background-color: #a8e6cf;
+    border-radius: 12px;
+    padding: 20px;
+    text-align: center;
+    margin-left: -50px;
+}
+
+.approach-box h2 {
+    margin-bottom: 10px;
+    text-align: center; /* Centraliza o título */
+}
+
+.approach-box p {
+    margin: 0;
+    font-size: 13px;
+    line-height: 1.4;
+    text-align: left; /* Alinha o texto à esquerda */
+}
+
+.agendar-consulta {
+    display: inline-block;
+    margin-top: 10px;
+    padding: 8px 12px;
+    background-color: #dfca0f;
+    color: #333333;
+    border: 2px solid #333;
+    border-radius: 5px;
+    transition: background-color 0.3s, transform 0s; /* Adiciona efeito de transição */
+}
+
+.agendar-consulta:hover {
+    background-color: #333; /* Altera a cor do fundo ao passar o mouse */
+    color: #fff; /* Altera a cor do texto ao passar o mouse */
+    transform: scale(1.05); /* Aumenta levemente o botão ao passar o mouse */
+}
+
+.testimonial-section {
+    margin-top: 40px; /* Espaço acima do carrossel */
+    text-align: center; 
+}
+
+.testimonial-carousel {
+    overflow: hidden; /* Esconde qualquer conteúdo que exceda a largura do carrossel */
+    cursor: grab; /* Muda o cursor para indicar que é arrastável */
+}
+
+.carousel-wrapper {
+    display: flex; /* Alinha as imagens em uma linha */
+    transition: transform 0.5s ease; /* Suaviza a animação ao mover */
+}
+
+.carousel-item {
+    min-width: 100%; /* 100% da largura do carrossel */
+    margin: 0; /* Remove margens para um alinhamento preciso */
+}
+
+.carousel-item img {
+    width: 30%; /* Ajusta a imagem para caber no item */
+    height: auto;
+}
+
+/* Contêiner principal para alinhar section e aside */
+.main-container {
+    display: flex;
+    align-items: flex-start; /* Alinha os elementos ao topo */
+    gap: 20px;
+    padding: 20px;
+}
+
+/* Layout das colunas */
+.content-section {
+    width: 70%;
+}
+
+.sidebar {
+    width: 30%;
+    background-color: #e8f4f8; /* Cor de fundo personalizada */
+    padding: 20px;
+    border-radius: 8px;
+}
+
+/* Estilo dos links no sidebar */
+.sidebar ul {
+    list-style: none;
+    padding: 0;
+}
+
+.sidebar li {
+    margin: 10px 0;
+}
+
+/* Estilo dos links no aside */
+.sidebar a {
+    display: block;
+    padding: 10px;
+    background-color: #4a90e2; /* Cor de fundo padrão */
+    color: white;
+    text-align: center;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+/* Mantém a mesma cor após ser visitado */
+.sidebar a:visited {
+    background-color: #4a90e2;
+    color: white;
+}
+
+/* Efeito hover */
+.sidebar a:hover {
+    background-color: #357ab8; /* Cor mais escura no hover */
+}
+
+/* Remove o foco ao clicar no link */
+.sidebar a:focus {
+    outline: none;
+}
+
+/* Responsividade para telas menores */
+@media (max-width: 768px) {
+    .main-container {
+        flex-direction: column;
+    }
+
+    .content-section, .sidebar {
+        width: 100%;
+    }
+}
+
+/* Estilo do Footer */
+.footer {
+    background-color: #4a90e2; /* Cor de fundo */
+    color: white; /* Cor do texto */
+    text-align: center; /* Centraliza o texto */
+    padding: 15px 0; /* Espaçamento interno */
+    position: relative;
+    bottom: 0;
+    width: 100%; /* Garante que ocupe toda a largura */
+    font-size: 16px;
+    box-shadow: 0 -2px 10px rgba(0, 0, 0, 0.1); /* Sombra sutil */
+}
+
+/* Responsividade para telas menores */
+@media (max-width: 768px) {
+    .footer {
+        font-size: 14px;
+        padding: 10px 0;
+    }
+}

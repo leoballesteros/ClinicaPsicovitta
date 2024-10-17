@@ -4,6 +4,10 @@
     Bem-vindo ao repositório do site da <strong>Psicovitta</strong>, um centro de atendimento psicológico localizado em Nova Santa Rita - RS. Este projeto foi desenvolvido para fornecer uma plataforma simples e acessível para os pacientes conhecerem os serviços disponíveis e agendarem suas consultas online ou presencialmente.
 </p>
 
+<p>
+    Acesse o site do projeto: <a href="https://leoballesteros.github.io/ClinicaPsicovitta/" target="_blank">🌐</a>
+</p>
+
 <h2>📂 Estrutura do Projeto</h2>
 
 <p>
